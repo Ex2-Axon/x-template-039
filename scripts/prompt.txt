@@ -1,0 +1,176 @@
+You are building a daily UI project. Below is the theme specification for today.
+
+## Theme Context (daily-context.json)
+```json
+{
+  "day": 39,
+  "date": "2026-05-31",
+  "version": "1.39.0",
+  "project_name": "x-template-039",
+  "theme": {
+    "name": "BIOMORPHIC GRID ORCHESTRA",
+    "style": "A meticulous fusion of Swiss precision and fluid biomorphic aesthetics, creating dynamic, living layouts. Typography and imagery flow and adapt within a structured, yet evolving, framework, celebrating a harmonious interplay of rigid geometry and organic curves. Think structured chaos, digital flora, and intelligent negative space that breathes.",
+    "mood": "Precision, Organic Flow, Ethereal, Dynamic, Avant-Garde"
+  },
+  "palette": {
+    "background": "#0A0E12",
+    "surface": "#1B222B",
+    "primary": "#00C2A8",
+    "accent": "#D139FF",
+    "text": "#E0E8F0",
+    "muted": "#6C7D8F"
+  },
+  "typography": {
+    "heading": "Syne",
+    "body": "Outfit",
+    "size": "fluid-optimized-scale"
+  },
+  "layout": {
+    "structure": "Asymmetric with biomorphic overlays and dynamic grid shifts, embracing experimental overlap",
+    "density": "Dynamic-compact",
+    "border_style": "Ethereal gradient glows on organic shapes, 1px subtle dark border with 30% opacity on grid elements, rounded-3xl where elements meet biomorphic forms."
+  },
+  "animation": {
+    "level": "high",
+    "style": "Fluid micro-morphing elements, magnetic hover effects on biomorphic components, generative text reveals with organic growth patterns, parallax layers of structured grids and free-flowing forms."
+  },
+  "components": {
+    "hero_text": "FLUX SWISS MORPH",
+    "subtitle": "Where rigid precision meets the fluid ballet of biological forms, crafting interfaces that breathe and evolve.",
+    "button_label": "ACTIVATE GENESIS",
+    "badge_text": "VERSION: BIOTIC 39"
+  },
+  "commit_message": "feat: UI Day 39 — Experimental Theme",
+  "source": "gemini-key1",
+  "selected_component": {
+    "category": "loaders",
+    "component": "Subaashbala_itchy-husky-37.html",
+    "path": "C:\\Users\\User\\Documents\\GitHub\\Axon\\x-components\\loaders\\Subaashbala_itchy-husky-37.html",
+    "content": "<div class=\"loader\">\n  <div class=\"shape\">\n    <div class=\"numRowContainer\">\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n      <div class=\"numRow\">0 1 0 1 1 0 0 1</div>\n    </div>\n  </div>\n</div>\n\n<style>\n/* Tags: animation, minimalist, loader, rotate, loading animation */\n.shape {\n  --BG-COLOR: #59d5e0;\n  --OUTLINE-COLOR: #068b97;\n  --OUTLINE-SIZE: 15px;\n  width: 7rem;\n  aspect-ratio: 1;\n  position: relative;\n  border-radius: 50%;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  outline: var(--OUTLINE-SIZE) solid var(--OUTLINE-COLOR);\n  background: var(--BG-COLOR);\n  box-shadow: 0px 0px calc(var(--OUTLINE-SIZE) + 25px) rgba(0, 0, 0, 0.438);\n  animation: morph 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;\n}\n.numRowContainer {\n  height: fit-content;\n  animation: infiniteScroll 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;\n}\n@keyframes infiniteScroll {\n  from {\n    transform: translate(0, 0);\n  }\n  to {\n    transform: translate(0, -50%);\n  }\n}\n@keyframes morph {\n  50% {\n    --BG-COLOR: PINK;\n    --OUTLINE-COLOR: #ff407d;\n    transform: rotate(150deg);\n    border-radius: 20%;\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n\n</style>"
+  }
+}
+```
+
+## Selected Component Reference
+- Category: loaders
+- Component: Subaashbala_itchy-husky-37.html
+- Path: C:\Users\User\Documents\GitHub\Axon\x-components\loaders\Subaashbala_itchy-husky-37.html
+
+Use the selected component HTML below as the primary design reference for the new UI. Keep the structure and styling assumptions in mind while rewriting the requested files.
+```html
+<div class="loader">
+  <div class="shape">
+    <div class="numRowContainer">
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+      <div class="numRow">0 1 0 1 1 0 0 1</div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Tags: animation, minimalist, loader, rotate, loading animation */
+.shape {
+  --BG-COLOR: #59d5e0;
+  --OUTLINE-COLOR: #068b97;
+  --OUTLINE-SIZE: 15px;
+  width: 7rem;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  outline: var(--OUTLINE-SIZE) solid var(--OUTLINE-COLOR);
+  background: var(--BG-COLOR);
+  box-shadow: 0px 0px calc(var(--OUTLINE-SIZE) + 25px) rgba(0, 0, 0, 0.438);
+  animation: morph 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+.numRowContainer {
+  height: fit-content;
+  animation: infiniteScroll 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+@keyframes infiniteScroll {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -50%);
+  }
+}
+@keyframes morph {
+  50% {
+    --BG-COLOR: PINK;
+    --OUTLINE-COLOR: #ff407d;
+    transform: rotate(150deg);
+    border-radius: 20%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+```
+
+## Your Task
+Completely redesign the UI by rewriting these three files from scratch:
+- `src/App.tsx`
+- `src/App.css`
+- `src/index.css`
+
+## Rules for App.tsx
+1. Keep ALL existing imports:
+   - `import { useState, useEffect, useRef } from 'react'`
+   - `import reactLogo from './assets/react.svg'`
+   - `import viteLogo from './assets/vite.svg'`
+   - `import heroImg from './assets/hero.png'`
+   - `import './App.css'`
+2. Keep the `CounterNum` component (useRef + useEffect animation)
+3. Keep the counter button with `onClick` / `setCount` handler
+4. Keep the Documentation section (Vite/React links)
+5. Keep the Social section (GitHub/Discord/X/Bluesky links + SVG icons)
+6. Do NOT use CSS custom properties (`--var-name`) in inline `style` attributes - TypeScript will error
+
+## Rules for CSS
+- Apply the palette, typography, layout structure, animation level, and component text from the JSON above
+- Use Google Fonts via `@import` in `index.css`
+- Match the theme mood: Precision, Organic Flow, Ethereal, Dynamic, Avant-Garde
+
+## Mandatory Requirements (apply to every build)
+
+### 1. Responsive - Mobile First
+- Design for mobile (320px) first, scale up with `min-width` breakpoints
+- Touch targets minimum 44x44px
+- No horizontal scroll on any screen size
+- Fluid typography: use `clamp()` or responsive units (`rem`, `%`, `vw`)
+- Images and layout must reflow gracefully at 320px, 768px, 1280px
+
+### 2. Footer Copyright
+- The page MUST have a `<footer>` at the bottom
+- Footer text: `© 2026 Microtronic Co., Ltd. All rights reserved. Credit By Axon.`
+- Legal: [Privacy Policy](https://microtronic-thailand.github.io/privacy-policy/?lang=en)
+- Style the footer to match the theme palette (muted text on surface background)
+
+### 3. SEO Standards
+- `index.html` must have a descriptive `<title>`: `FLUX SWISS MORPH - BIOMORPHIC GRID ORCHESTRA | Microtronic`
+- Add `<meta name="description">` with the subtitle: `Where rigid precision meets the fluid ballet of biological forms, crafting interfaces that breathe and evolve.`
+- Add `<meta name="keywords">` relevant to the theme
+- Add Open Graph tags: `og:title`, `og:description`, `og:type` (website)
+- All images must have meaningful `alt` attributes
+- Use semantic HTML: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` where appropriate
+- Heading hierarchy: one `<h1>` (hero), `<h2>` for sections - no skipping levels
+
+## After saving all files
+1. Update `version` in `package.json` to `1.39.0`
+2. Update `<title>` and meta tags in `index.html` as specified above
+3. Run: `pnpm build`
+4. If build succeeds → write `done` to `scripts/build-done.flag`
+5. If build fails with TypeScript errors → fix them and rebuild
