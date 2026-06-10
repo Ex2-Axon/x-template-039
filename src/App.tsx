@@ -1,205 +1,119 @@
-import { useState, useEffect, useRef } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
-/* ── Floating particles ── */
-function Particles() {
-  const colors = ['#00f5ff', '#bf00ff', '#ff006e', '#00ff88', '#ffee00']
-  const particles = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 15}s`,
-    duration: `${8 + Math.random() * 12}s`,
-    color: colors[Math.floor(Math.random() * colors.length)],
-    size: `${1 + Math.random() * 3}px`,
-  }))
-
-  return (
-    <div className="particles" aria-hidden="true">
-      {particles.map((p) => (
-        <span
-          key={p.id}
-          className="particle"
-          style={{
-            left: p.left,
-            bottom: '-10px',
-            animationDelay: p.delay,
-            animationDuration: p.duration,
-            background: p.color,
-            boxShadow: `0 0 6px ${p.color}`,
-            width: p.size,
-            height: p.size,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
-/* ── Corner decorations ── */
-function Corners() {
-  return (
-    <>
-      <div className="corner-tl" aria-hidden="true" />
-      <div className="corner-tr" aria-hidden="true" />
-      <div className="corner-bl" aria-hidden="true" />
-      <div className="corner-br" aria-hidden="true" />
-    </>
-  )
-}
-
-/* ── Animated counter number ── */
-function CounterNum({ value }: { value: number }) {
-  const ref = useRef<HTMLSpanElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    el.style.transform = 'scale(1.4)'
-    el.style.color = '#ff006e'
-    el.style.textShadow = '0 0 20px #ff006e'
-    const t = setTimeout(() => {
-      el.style.transform = 'scale(1)'
-      el.style.color = ''
-      el.style.textShadow = ''
-    }, 200)
-    return () => clearTimeout(t)
-  }, [value])
-
-  return (
-    <span
-      ref={ref}
-      className="counter-num"
-      style={{ transition: 'all 0.2s ease' }}
-    >
-      {value}
-    </span>
-  )
-}
+import { useState } from 'react'
+import { ArrowRightIcon, GlobeAltIcon, ShieldCheckIcon, BoltIcon } from '@heroicons/react/24/outline'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [email, setEmail] = useState('')
 
   return (
-    <>
-      <Particles />
-      <Corners />
-
-      {/* ── Hero section ── */}
-      <section id="center">
-        <div className="hero-badge animate-in-1">
-          <span className="dot" />
-          SYSTEM ONLINE — VITE + REACT
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg" />
+            <span className="text-xl font-bold tracking-tight">AXON_CLEAN</span>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="#" className="link-underline">Solutions</a>
+            <a href="#" className="link-underline">Resources</a>
+            <a href="#" className="link-underline">Pricing</a>
+            <button className="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition-all">
+              Get Started
+            </button>
+          </div>
         </div>
+      </nav>
 
-        <div className="hero animate-in-2">
-          <img src={heroImg} className="base" width="160" height="168" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-
-        <div className="animate-in-3">
-          <h1 className="glitch" data-text="GET STARTED">
-            GET STARTED
+      <main>
+        {/* Hero Section */}
+        <section className="container-clean text-center space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold">
+            <BoltIcon className="w-4 h-4" />
+            What's new in v4.0
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+            Build faster with <br />
+            <span className="text-blue-600">Pure Simplicity.</span>
           </h1>
-          <div className="neon-line" />
-        </div>
-
-        <p className="subtitle animate-in-4">
-          Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-        </p>
-
-        <button
-          type="button"
-          className="counter animate-in-5"
-          onClick={() => setCount((c) => c + 1)}
-        >
-          COUNT_
-          <CounterNum value={count} />
-        </button>
-      </section>
-
-      <div className="ticks" />
-
-      {/* ── Next steps ── */}
-      <section id="next-steps">
-        <div id="docs">
-          <div className="section-icon-wrap">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#documentation-icon" />
-            </svg>
+          <p className="max-w-2xl mx-auto text-xl text-slate-500 leading-relaxed">
+            A minimalist approach to building high-performance web applications. 
+            No clutter, no noise. Just your ideas brought to life.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <button className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 flex items-center justify-center gap-2">
+              Start Building
+              <ArrowRightIcon className="w-5 h-5" />
+            </button>
+            <button className="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
+              Book a Demo
+            </button>
           </div>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank" rel="noreferrer">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank" rel="noreferrer">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn More
-              </a>
-            </li>
-          </ul>
-        </div>
+        </section>
 
-        <div id="social">
-          <div className="section-icon-wrap">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#social-icon" />
-            </svg>
+        {/* Features */}
+        <section className="bg-slate-50 py-24">
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center">
+                <GlobeAltIcon className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold">Global Scale</h3>
+              <p className="text-slate-500 leading-relaxed">Deploy to edges around the world with a single click. Minimal latency, maximum reach.</p>
+            </div>
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center">
+                <ShieldCheckIcon className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold">Secure by Default</h3>
+              <p className="text-slate-500 leading-relaxed">Enterprise-grade security baked into every component. Your data is safe with Axon.</p>
+            </div>
+            <div className="space-y-4">
+              <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center">
+                <BoltIcon className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold">Instant Feedback</h3>
+              <p className="text-slate-500 leading-relaxed">Experience zero-lag development with our new Turbo-engine. Speed up your workflow.</p>
+            </div>
           </div>
-          <h2>Connect With Us</h2>
-          <p>Join the Vite X-Template Community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/Ex2-Axon/x-template" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#github-icon" />
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://discord.gg/8Zeq8VCU" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#discord-icon" />
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/Microtronic2" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon" />
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/microtronic.bsky.social" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon" />
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        </section>
+
+        {/* CTA Section */}
+        <section className="container-clean">
+          <div className="bg-slate-900 rounded-[32px] p-8 md:p-16 text-center space-y-8 overflow-hidden relative">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full" />
+            <h2 className="text-3xl md:text-5xl font-bold text-white">Ready to streamline your workflow?</h2>
+            <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              />
+              <button className="bg-white text-slate-900 px-6 py-3 rounded-xl font-bold hover:bg-slate-100 transition-all">
+                Subscribe
+              </button>
+            </div>
+            <p className="text-white/40 text-sm">Join 2,000+ developers receiving our weekly updates.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-slate-100 py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:row justify-between items-center gap-8">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 bg-blue-600 rounded" />
+            <span className="font-bold tracking-tight">AXON</span>
+          </div>
+          <div className="flex gap-8 text-sm text-slate-400">
+            <a href="#" className="hover:text-blue-600 transition-colors">Privacy</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Terms</a>
+            <a href="#" className="hover:text-blue-600 transition-colors">Twitter</a>
+          </div>
+          <p className="text-sm text-slate-400">© 2026 Axon. All rights reserved.</p>
         </div>
-      </section>
-
-      <div className="ticks" />
-
-      <section id="spacer">
-        <span className="footer-text">// SYSTEM v1.0.0 — READY</span>
-      </section>
-    </>
+      </footer>
+    </div>
   )
 }
 
